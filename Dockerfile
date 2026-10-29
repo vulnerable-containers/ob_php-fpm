@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.4
 
 # Stage 1: Builder Stage
-FROM php:8.4.4-fpm-alpine AS builder
+FROM php:8.4.27-fpm-alpine AS builder
 
 LABEL maintainer="Thomas Spicer (thomas@openbridge.com)"
 
@@ -77,7 +77,7 @@ RUN apk del .build-deps \
     && rm -rf /tmp/* /var/cache/apk/*
 
 # Stage 2: Final Image
-FROM php:8.4.4-fpm-alpine
+FROM php:8.4.27-fpm-alpine
 
 # Set environment variables
 ENV LOG_PREFIX=/var/log/php-fpm \
